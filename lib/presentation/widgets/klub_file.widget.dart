@@ -39,7 +39,9 @@ class KlubFileComponent extends StatelessWidget {
               textAlign: TextAlign.left,
             )
           ],
-        ))
+        )),
+        const SizedBox(height: 20,),
+        Divider(height: 5,)
       ],
     );
   }

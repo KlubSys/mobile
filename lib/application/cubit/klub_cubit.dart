@@ -34,15 +34,15 @@ class KlubCubit extends Cubit<KlubState> {
 
     _downloadTaskService = KlubDownloadTaskService(
         klubApiRepository: _klubApiRepository, klubCubit: this);
-    /*_loadDownloadTaskstimer =
+    _loadDownloadTaskstimer =
         Timer.periodic(const Duration(seconds: 3), (Timer t) {
       loadDownloadTasks();
-    });*/
+    });
 
-    /*_loadBlocstimer =
+    _loadBlocstimer =
         Timer.periodic(const Duration(seconds: 3), (Timer t) {
       loadBlocs();
-    });*/
+    });
   }
 
   init() async {

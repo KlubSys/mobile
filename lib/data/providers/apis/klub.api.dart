@@ -7,13 +7,13 @@ abstract class KlubApi {
   Future<ApiResponse<List<KlubFile>>> getFiles();
   Future<ApiResponse<List<KlubBloc>>> getBlocs();
   Future<ApiResponse<List<KlubDownload>>> getDownloadTasks();
-  Future<ApiResponse<KlubDownload>> getDownloadTaskById(int id);
-  Future<ApiResponse<bool>> deleteDownloadTaskById(int id);
+  Future<ApiResponse<KlubDownload>> getDownloadTaskById(String id);
+  Future<ApiResponse<bool>> deleteDownloadTaskById(String id);
 
   Future<ApiResponse<bool>> updateDownloadTaskData(String id, String data);
 
   ///Return the doxnload task id
-  Future<ApiResponse<int>> initDownload(String firstBlockGroupId);
+  Future<ApiResponse<String>> initDownload(String firstBlockGroupId);
 
   Future<ApiResponse<String>> getNextBlocGroupRef(String currentRef);
 }

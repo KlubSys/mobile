@@ -65,21 +65,21 @@ class LocalKlubApi extends KlubApi {
   }
 
   @override
-  Future<ApiResponse<int>> initDownload(String firstBlockGroupId) {
+  Future<ApiResponse<String>> initDownload(String firstBlockGroupId) {
     return Future.delayed(const Duration(seconds: 5), () {
-      return ApiResponse(data: 1);
+      return ApiResponse(data: "1");
     });
   }
 
   @override
-  Future<ApiResponse<bool>> deleteDownloadTaskById(int id) {
+  Future<ApiResponse<bool>> deleteDownloadTaskById(String id) {
     return Future.delayed(const Duration(seconds: 5), () {
       return ApiResponse(data: true);
     });
   }
 
   @override
-  Future<ApiResponse<KlubDownload>> getDownloadTaskById(int id) {
+  Future<ApiResponse<KlubDownload>> getDownloadTaskById(String id) {
     return Future.delayed(const Duration(seconds: 5), () {
       return ApiResponse(data: _klubDownloadCompletedTask);
     });

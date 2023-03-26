@@ -17,4 +17,14 @@ class KlubBlocGroup {
       required this.previous,
       required this.data,
       required this.dataSize});
+
+  factory KlubBlocGroup.fromJson(Map<String, dynamic> json) => KlubBlocGroup(
+      id: json["id"],
+      identifier: json["identifier"],
+      deployed: json["deployed"],
+      maxBlock: json["maxBlock"],
+      next: json["next"],
+      previous: json["previous"],
+      data: json["data"],
+      dataSize: json["dataSize"]);
 }

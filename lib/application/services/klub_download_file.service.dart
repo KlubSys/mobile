@@ -34,7 +34,7 @@ class KlubDownloadFileService {
   bool hasData = false;
   int? progress;
   bool started = false;
-  late int? downloadTaskId;
+  late String? downloadTaskId;
   final KlubApiRepository klubApiRepository;
 
   KlubDownloadFileService(
@@ -83,7 +83,7 @@ class KlubDownloadFileService {
           canContinue = false;
           hasData = false;
           await dio.download(
-              "http://10.0.2.2:8084/api/downloads/0c70a469-bb66-4f05-a7c3-8362b4ff873e/download",
+              "http://10.0.2.2:8084/api/downloads/${downloadTaskId}/download_data",
               savePath, onReceiveProgress: (rec, total) {
             var download = (rec / total) * 100;
             progress = download.toInt();

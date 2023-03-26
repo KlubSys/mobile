@@ -6,6 +6,7 @@ import 'package:klub/data/repositories/klub-api.repository.dart';
 import 'package:klub/presentation/screens/home.screen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 

@@ -13,4 +13,12 @@ class KlubBloc {
       required this.data,
       required this.blockGroupRef,
       required this.dataStoreRef});
+
+  factory KlubBloc.fromJson(Map<String, dynamic> json) => KlubBloc(
+      id: json["id"],
+      identifier: json["identifier"],
+      size: json["size"],
+      data: json["data"],
+      blockGroupRef: json["blockGroupRef"],
+      dataStoreRef: json["dataStoreRef"]);
 }

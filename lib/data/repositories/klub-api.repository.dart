@@ -47,25 +47,25 @@ class KlubApiRepository {
     logToConsole("An error occured while updating download task  data");
   }
 
-  Future<int> initFileDownload(KlubFile file) async {
-    ApiResponse<int> res = await _klubApi.initDownload(file.firstBlockGroupId!);
+  Future<String> initFileDownload(KlubFile file) async {
+    ApiResponse<String> res = await _klubApi.initDownload(file.firstBlockGroupId!);
     if (res.isSuccessFull()) {
       logToConsole("Download Task inited");
       return res.data!;
     }
-    return -1;
+    return "-1";
   }
 
-  Future<int> initBlocDownload(String blocGroupRef) async {
-    ApiResponse<int> res = await _klubApi.initDownload(blocGroupRef);
+  Future<String> initBlocDownload(String blocGroupRef) async {
+    ApiResponse<String> res = await _klubApi.initDownload(blocGroupRef);
     if (res.isSuccessFull()) {
       logToConsole("Download Task inited by block");
       return res.data!;
     }
-    return -1;
+    return "-1";
   }
 
-  Future<KlubDownload?> getDownloadById(int id) async {
+  Future<KlubDownload?> getDownloadById(String id) async {
     ApiResponse<KlubDownload> res = await _klubApi.getDownloadTaskById(id);
     if (res.isSuccessFull()) {
       logToConsole("Download Task Get One By Id success");
@@ -74,7 +74,7 @@ class KlubApiRepository {
     return null;
   }
 
-  Future<bool> deleteDownloadById(int id) async {
+  Future<bool> deleteDownloadById(String id) async {
     ApiResponse<bool> res = await _klubApi.deleteDownloadTaskById(id);
     if (res.isSuccessFull()) {
       logToConsole("Download Task deleted...");
@@ -87,6 +87,7 @@ class KlubApiRepository {
     ApiResponse<String> res = await _klubApi.getNextBlocGroupRef(currentRef);
     if (res.isSuccessFull()) {
       logToConsole("Download Task Got next bloc ref");
+      if (res.data == null) return null;
       if (res.data!.isEmpty) {
         return null;
       }
