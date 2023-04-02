@@ -38,6 +38,12 @@ class KlubBlocComponent extends StatelessWidget {
             Text(
               "${bloc.size} Bytes",
               textAlign: TextAlign.left,
+            ),const SizedBox(
+              height: 10,
+            ),
+            Divider(height: 5,),
+            const SizedBox(
+              height: 20,
             )
           ],
         ))

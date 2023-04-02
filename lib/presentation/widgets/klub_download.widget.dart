@@ -38,6 +38,12 @@ class KlubDownloadComponent extends StatelessWidget {
             Text(
               task.hasData ? "Processed" : "Pending",
               textAlign: TextAlign.left,
+            ),const SizedBox(
+              height: 10,
+            ),
+            Divider(height: 5,),
+            const SizedBox(
+              height: 20,
             )
           ],
         ))
